@@ -1,0 +1,35 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar  color="primary"> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Happy Hotels</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!--The main home content will be a welcome message with a call to action button -->
+<ion-content>
+  <ion-card>
+    <ion-card-header class=".ion-text-center">
+      <ion-card-title style="text-align:center" >Welcome To Happy Hotels </ion-card-title>
+    </ion-card-header>
+  
+    
+    <ion-card-content style="text-align:center">
+      <img src="./assets/hhlogo.jpg">
+      Happy Hotels allows users to browse all hotels across the world and get useful information such as price, location and reviews! <br>
+      <ion-button [routerLink]="['/','search-location']">
+        Start Searching
+        <ion-icon slot="end" name="search"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

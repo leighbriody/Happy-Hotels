@@ -1,0 +1,7 @@
+{
+  "name": "HappyHotelsV1",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

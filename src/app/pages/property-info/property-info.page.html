@@ -1,0 +1,114 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  color="primary"> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Property</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+ 
+
+   
+
+
+    <ion-slides [options]="option"  class="ion-margin-top">
+      <ion-slide *ngFor="let image of hotelImages">
+        <ion-card>
+          <img [src]="image.baseUrl.replace('{size}','y')" >
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+      <ion-item>
+      <ion-label>
+        <h3>{{cityName}}</h3>   
+        <h1>{{propertyName}}</h1>
+        
+
+
+        <ion-badge *ngIf="starRatingTitle" style="background-color: yellow; color: black; " > <ion-icon style="margin-right: 5%;" name="star-sharp"></ion-icon>{{starRatingTitle}}</ion-badge> 
+        <br>
+        <ion-badge *ngIf="health" style="background-color: white; color: black; " > <ion-icon style="margin-right: 5%;" name="medkit-outline"></ion-icon>{{health}}</ion-badge> 
+      </ion-label>
+      <ion-icon name="home-sharp" size="large" slot="end"></ion-icon>
+    </ion-item>
+
+ 
+  
+  
+      <ion-item >
+      <ion-label text-wrap>   
+        <ion-button>
+          Price : {{price}}
+          <ion-icon slot="end" name="wallet-outline"></ion-icon>
+        </ion-button>  
+      </ion-label>    
+    </ion-item>
+
+    
+ 
+     <!--If they have free wifi show it-->
+     
+      <ion-item *ngIf="freeWifi" href="#" class="ion-activated">
+        <ion-icon name="wifi" slot="start"></ion-icon>
+        <ion-label>{{freeWifi}}</ion-label>
+      </ion-item>
+ 
+
+    <!--If they have free wifi show it-->
+    
+      <ion-item *ngIf="freeWifi" href="#" class="ion-activated">
+        <ion-icon name="chevron-down-circle-outline" slot="start"></ion-icon>
+        <ion-label>{{checkIn}}</ion-label>
+      </ion-item>
+
+      <ion-item *ngIf="freeWifi" href="#" class="ion-activated">
+        <ion-icon name="time-outline" slot="start"></ion-icon>
+        <ion-label>{{checkOut}}</ion-label>
+      </ion-item>
+
+      <!--Reviews -->
+  <ion-item> 
+      <ion-label>
+             <h1>Reviews</h1>
+      </ion-label>
+      <ion-icon name="star-half" stye="color:yellow" size="large" slot="end"></ion-icon>
+    </ion-item>
+
+
+  
+    
+
+    
+
+    <ion-list>
+      
+
+      <ion-item *ngFor="let review of allReviews">
+        <ion-avatar slot="start">
+          <img src="./assets/user.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{review.recommendedBy}}</h2>
+          <ion-badge color="success"> <h3>{{review.qualitativeBadgeText}}</h3></ion-badge>
+          <p>{{review.summary}}</p>
+        </ion-label>
+      </ion-item>
+
+      </ion-list>
+
+    
+
+
+   </ion-content>
+  
+  
